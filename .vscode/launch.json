@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--reload"],
+      "jinja": true
+    },
+    {
+      "name": "Python: Debug pytest",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "-v", // Verbose output
+        "-s", // Disable capturing of output (print statements will show)
+        "${file}" // Path to your test file
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false // Debug into library code if needed
+    }
+  ]
+}
